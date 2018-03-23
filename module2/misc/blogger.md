@@ -2916,7 +2916,12 @@ Failures:
      Failure/Error: expect(page).to have_content("ruby, technology")
        expected to find text "ruby, technology" in "Article New Title! Created! New Title! New Body! Edit Delete Comments (0) Post a Comment Your Name Your Comment << Back to Articles List"
 ```
-
+  Here you should get rid of the commas for the expectation. I went down a deep rabbit hole of wondering
+  why mine weren't comma seperated. I thought that the methods in the Article Model would take care of that but it didn't
+  Ali's completed example has the test passing with:
+  expect(page).to have_content("ruby technology")
+  instead of
+  expect(page).to have_content("ruby, technology")
 It's not showing up on the page.
 
 ### Adding Tags to our Display
